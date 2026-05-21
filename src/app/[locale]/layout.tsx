@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/next";
 import "../globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { LanguageBanner } from "@/components/LanguageBanner";
 import { getDictionary } from "@/i18n";
 import { locales, type Locale } from "@/i18n/config";
 import { organizationJsonLd } from "@/lib/structured-data";
@@ -78,6 +79,7 @@ export default async function LocaleLayout({
         <Header locale={loc} dict={dict} />
         <main>{children}</main>
         <Footer locale={loc} dict={dict} />
+        {loc === "fr" && <LanguageBanner />}
         <Analytics />
       </body>
     </html>
