@@ -21,7 +21,7 @@ export const TESTIMONIALS: readonly Testimonial[] = [
     en: {
       quote:
         "Solène supported my daughter over several years, and especially at the pivotal moment of moving from British primary school to secondary school at the Lycée Français de Londres. Attentive and patient, Solène was able to pass on to my daughter her love of literature.",
-      author: "Anouk's mum, who is starting Year 7",
+      author: "Anouk's mother, who is starting Year 7",
     },
   },
   {
@@ -34,7 +34,7 @@ export const TESTIMONIALS: readonly Testimonial[] = [
     en: {
       quote:
         "Solène was the French teacher of my two children for a year, before we left London. They were 5 and 7 at the time and were in the British system; my husband and I felt it was time to bring academic French into their education. We turned to Solène, recommended to us by friends for her playful teaching, her approach that covers all the fundamentals, and her natural gentleness. The children took to her straight away and looked forward to their French lesson every week. I recommend her without hesitation: effective, rigorous, punctual and loved by children. She is a wonderful French teacher.",
-      author: "Mum of Gaspard and Constance, before they joined the Lycée Français",
+      author: "Mother of Gaspard and Constance, before they joined the Lycée Français",
     },
   },
 ];
