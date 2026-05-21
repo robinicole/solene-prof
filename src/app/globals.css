@@ -31,8 +31,8 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    /* Larger root size: scales all text and spacing up ~12.5%. */
-    font-size: 112.5%;
+    /* Larger root size: 20px base, scales all text and spacing up ~25%. */
+    font-size: 125%;
   }
   body {
     font-family: var(--font-heading);
