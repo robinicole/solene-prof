@@ -225,7 +225,7 @@ export const COURSES: readonly Course[] = [
       audience:
         "Professionnels et entreprises souhaitant développer leur français dans un cadre de travail.",
       format:
-        "Cours en personne ou en ligne. Tarif Business à partir de 60 £ de l'heure. N'hésitez pas à me contacter pour un devis.",
+        "Cours en personne ou en ligne. Tarif Business à partir de 80 £ de l'heure. N'hésitez pas à me contacter pour un devis.",
     },
     en: {
       title: "Business French",
@@ -244,7 +244,7 @@ export const COURSES: readonly Course[] = [
       audience:
         "Professionals and companies looking to develop their French in a work setting.",
       format:
-        "Lessons in person or online. Business rate from £60 per hour. Please get in touch for a quote.",
+        "Lessons in person or online. Business rate from £80 per hour. Please get in touch for a quote.",
     },
   },
 ];

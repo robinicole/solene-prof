@@ -133,7 +133,7 @@ export const en: Dictionary = {
     tablePriceHead: "Rate",
     businessTitle: "Business rate",
     businessText:
-      "From £60 per hour. For a professional French programme tailored to your company or your activity, please get in touch and I will prepare a quote.",
+      "From £80 per hour. For a professional French programme tailored to your company or your activity, please get in touch and I will prepare a quote.",
     businessButton: "Request a quote",
     cancellationTitle: "Cancellation & catch-up",
     cancellationParagraphs: [

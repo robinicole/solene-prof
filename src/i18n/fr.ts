@@ -132,7 +132,7 @@ export const fr = {
     tablePriceHead: "Tarif",
     businessTitle: "Tarif Business",
     businessText:
-      "À partir de 60 £ de l'heure. Pour un programme de français professionnel adapté à votre entreprise ou à votre activité, n'hésitez pas à me contacter pour établir un devis.",
+      "À partir de 80 £ de l'heure. Pour un programme de français professionnel adapté à votre entreprise ou à votre activité, n'hésitez pas à me contacter pour établir un devis.",
     businessButton: "Demander un devis",
     cancellationTitle: "Annulation & rattrapage",
     cancellationParagraphs: [
