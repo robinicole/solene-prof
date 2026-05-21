@@ -29,12 +29,12 @@ export const TESTIMONIALS: readonly Testimonial[] = [
     fr: {
       quote:
         "Solène a été la professeure de français de mes deux enfants pendant un an, avant que nous quittions Londres. Ils avaient alors 5 et 7 ans et étaient scolarisés dans le système britannique ; nous sentions, avec mon mari, qu'il était temps d'intégrer le français académique à leur cursus. Nous avons fait appel à Solène, qui nous était recommandée par des amis pour sa pédagogie ludique, son approche couvrant bien tous les fondamentaux et sa douceur naturelle. Les enfants l'ont tout de suite adoptée et se réjouissaient chaque semaine de leur cours de français. Je la recommande les yeux fermés : efficace, rigoureuse, ponctuelle et aimée des enfants, c'est une superbe professeure de français.",
-      author: "Parent de deux élèves",
+      author: "Maman de Gaspard et Constance avant leur arrivée au Lycée Français",
     },
     en: {
       quote:
         "Solène was the French teacher of my two children for a year, before we left London. They were 5 and 7 at the time and were in the British system; my husband and I felt it was time to bring academic French into their education. We turned to Solène, recommended to us by friends for her playful teaching, her approach that covers all the fundamentals, and her natural gentleness. The children took to her straight away and looked forward to their French lesson every week. I recommend her without hesitation: effective, rigorous, punctual and loved by children. She is a wonderful French teacher.",
-      author: "Parent of two pupils",
+      author: "Mum of Gaspard and Constance, before they joined the Lycée Français",
     },
   },
 ];
