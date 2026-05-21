@@ -51,6 +51,13 @@
     background-color: var(--color-coral);
     color: #ffffff;
   }
+
+  /* Show the hand cursor on every clickable control. */
+  button:not(:disabled),
+  [role="button"],
+  a[href] {
+    cursor: pointer;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
