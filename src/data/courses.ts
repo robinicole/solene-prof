@@ -137,7 +137,7 @@ export const COURSES: readonly Course[] = [
         "Sujets d'annales et examens blancs",
       ],
       audience:
-        "Élèves de collège (Brevet) et de lycée (Première et Terminale) du système français, scolarisés ou en candidat libre.",
+        "Élèves de collège (Brevet) et de lycée (Première) du système français, scolarisés ou en candidat libre.",
       format:
         "Cours en tête-à-tête, en personne ou en ligne. Préparation intensive possible à l'approche des épreuves.",
     },
@@ -156,7 +156,7 @@ export const COURSES: readonly Course[] = [
         "Past papers and mock exams",
       ],
       audience:
-        "Secondary students (Brevet) and sixth-formers (Première and Terminale) in the French system, enrolled or as independent candidates.",
+        "Secondary students (Brevet) and sixth-formers (Première) in the French system, enrolled or as independent candidates.",
       format:
         "One-to-one lessons, in person or online. Intensive preparation available as the exams approach.",
     },
@@ -169,7 +169,7 @@ export const COURSES: readonly Course[] = [
       title: "FLE, Français Langue Étrangère",
       subtitle: "Apprendre le français quand ce n'est pas sa langue maternelle",
       summary:
-        "Des cours de français pour adultes et enfants non-francophones, du débutant au perfectionnement.",
+        "Des cours de français pour adultes non-francophones, du débutant au perfectionnement.",
       description:
         "Le français langue étrangère s'adresse à toutes celles et ceux qui souhaitent apprendre ou perfectionner le français sans l'avoir comme langue maternelle. Les cours partent de votre niveau et de vos objectifs : vie quotidienne, voyage, culture, ou progression vers un niveau certifié.",
       highlights: [
@@ -180,7 +180,7 @@ export const COURSES: readonly Course[] = [
         "Préparation possible aux certifications (DELF / DALF)",
       ],
       audience:
-        "Adultes et enfants non-francophones souhaitant apprendre ou perfectionner leur français, à tous les niveaux.",
+        "Adultes non-francophones souhaitant apprendre ou perfectionner leur français, à tous les niveaux.",
       format:
         "Cours en tête-à-tête, en personne ou en ligne, au rythme qui vous convient.",
     },
@@ -188,7 +188,7 @@ export const COURSES: readonly Course[] = [
       title: "French as a Foreign Language (FLE)",
       subtitle: "Learning French when it isn't your mother tongue",
       summary:
-        "French lessons for non-native adults and children, from beginner to advanced.",
+        "French lessons for non-native adults, from beginner to advanced.",
       description:
         "French as a foreign language is for anyone who wants to learn or improve their French without having it as a mother tongue. Lessons start from your level and your goals: everyday life, travel, culture, or working towards a certified level.",
       highlights: [
@@ -199,7 +199,7 @@ export const COURSES: readonly Course[] = [
         "Optional preparation for certifications (DELF / DALF)",
       ],
       audience:
-        "Non-native adults and children who want to learn or improve their French, at any level.",
+        "Non-native adults who want to learn or improve their French, at any level.",
       format:
         "One-to-one lessons, in person or online, at the pace that suits you.",
     },
