@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+/* =========================================================================
+   Design system : inspiré de l'Institut Français (identité propre à Solène)
+   Palette : Bleu roi & Corail · Typo : Hanken Grotesk
+   ========================================================================= */
+
+@theme {
+  --color-blue: #203c91;
+  --color-blue-mid: #3558a2;
+  --color-blue-soft: #47629f;
+  --color-blue-pale: #c3cee6;
+
+  --color-coral: #ff9575;
+  --color-coral-light: #ffb6a0;
+  --color-coral-dark: #bf5230;
+
+  --color-mist: #ebeef6;
+  --color-mist-dark: #d7deef;
+
+  --color-ink: #2e2e2e;
+  --color-ink-light: #4f4f57;
+
+  --color-paper: #ffffff;
+
+  --font-heading: "Hanken Grotesk", system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Larger root size: scales all text and spacing up ~12.5%. */
+    font-size: 112.5%;
+  }
+  body {
+    font-family: var(--font-heading);
+    color: var(--color-ink);
+    background-color: var(--color-paper);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+  ::selection {
+    background-color: var(--color-coral);
+    color: #ffffff;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
