@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { COURSES } from "@/data/courses";
+import { orderedCourses } from "@/data/courses";
 import { CourseCard } from "./CourseCard";
 import { SectionHeader } from "./SectionHeader";
 import type { Dictionary } from "@/i18n";
@@ -21,13 +21,13 @@ export function CoursesPreview({ locale, dict }: CoursesPreviewProps) {
         />
 
         <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {COURSES.map((course, i) => (
+          {orderedCourses(locale).map((course, i) => (
             <CourseCard
               key={course.id}
               course={course}
               index={i}
               locale={locale}
-              learnMoreLabel={dict.common.learnMore}
+              dict={dict}
             />
           ))}
         </div>

@@ -37,6 +37,11 @@ export const fr = {
     learnMore: "En savoir plus",
   },
 
+  audienceBadge: {
+    francophone: "Francophones",
+    anglophone: "Anglophones",
+  },
+
   home: {
     meta: {
       title: "Cours de français à Londres, Solène Lanza",

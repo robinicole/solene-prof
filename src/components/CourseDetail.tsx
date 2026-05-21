@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { CourseCard } from "./CourseCard";
-import { COURSES, type Course } from "@/data/courses";
+import { orderedCourses, type Course } from "@/data/courses";
 import type { Dictionary } from "@/i18n";
 import type { Locale } from "@/i18n/config";
 
@@ -95,17 +95,17 @@ export function CourseDetail({ course, locale, dict }: CourseDetailProps) {
             className="mt-3 block h-[3px] w-12 bg-coral"
           />
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {COURSES.map((other, i) =>
-              other.id === course.id ? null : (
+            {orderedCourses(locale)
+              .filter((other) => other.id !== course.id)
+              .map((other, i) => (
                 <CourseCard
                   key={other.id}
                   course={other}
                   index={i}
                   locale={locale}
-                  learnMoreLabel={dict.common.learnMore}
+                  dict={dict}
                 />
-              )
-            )}
+              ))}
           </div>
         </div>
       </section>

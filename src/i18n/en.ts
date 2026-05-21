@@ -39,6 +39,11 @@ export const en: Dictionary = {
     learnMore: "Learn more",
   },
 
+  audienceBadge: {
+    francophone: "French speakers",
+    anglophone: "English speakers",
+  },
+
   home: {
     meta: {
       title: "French lessons in London, Solène Lanza",

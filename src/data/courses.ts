@@ -20,9 +20,13 @@ export interface CourseContent {
   readonly format: string;
 }
 
+export type Audience = "fr" | "en";
+
 export interface Course {
   readonly id: string;
   readonly slug: string;
+  /** Primary target audience: drives the badge and the per-locale ordering. */
+  readonly audience: Audience;
   readonly fr: CourseContent;
   readonly en: CourseContent;
 }
@@ -31,6 +35,7 @@ export const COURSES: readonly Course[] = [
   {
     id: "lycee-francais",
     slug: "lycee-francais",
+    audience: "fr",
     fr: {
       title: "Entrée au Lycée Français de Londres",
       subtitle: "Préparer le passage dans le système français",
@@ -73,6 +78,7 @@ export const COURSES: readonly Course[] = [
   {
     id: "gcse",
     slug: "gcse",
+    audience: "fr",
     fr: {
       title: "GCSE Français",
       subtitle: "Réussir l'épreuve de français au GCSE",
@@ -115,6 +121,7 @@ export const COURSES: readonly Course[] = [
   {
     id: "brevet-bac",
     slug: "brevet-bac",
+    audience: "fr",
     fr: {
       title: "Brevet & Bac français",
       subtitle: "Préparation aux examens français, à l'oral comme à l'écrit",
@@ -157,6 +164,7 @@ export const COURSES: readonly Course[] = [
   {
     id: "fle",
     slug: "fle",
+    audience: "en",
     fr: {
       title: "FLE, Français Langue Étrangère",
       subtitle: "Apprendre le français quand ce n'est pas sa langue maternelle",
@@ -199,6 +207,7 @@ export const COURSES: readonly Course[] = [
   {
     id: "business",
     slug: "business",
+    audience: "en",
     fr: {
       title: "Français Business",
       subtitle: "Le français professionnel pour entreprises et particuliers",
@@ -246,4 +255,17 @@ export function getCourse(slug: string): Course | undefined {
 
 export function courseContent(course: Course, locale: Locale): CourseContent {
   return course[locale];
+}
+
+/**
+ * Courses ordered so the visitor's language audience comes first:
+ * French-audience courses first on the FR site, English-audience first on EN.
+ * Array sort is stable, so same-audience courses keep their canonical order.
+ */
+export function orderedCourses(locale: Locale): readonly Course[] {
+  const firstAudience: Audience = locale === "en" ? "en" : "fr";
+  return [...COURSES].sort((a, b) => {
+    if (a.audience === b.audience) return 0;
+    return a.audience === firstAudience ? -1 : 1;
+  });
 }

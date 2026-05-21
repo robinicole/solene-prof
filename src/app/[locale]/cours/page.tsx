@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getDictionary } from "@/i18n";
 import type { Locale } from "@/i18n/config";
-import { COURSES } from "@/data/courses";
+import { orderedCourses } from "@/data/courses";
 import { PageHero } from "@/components/PageHero";
 import { CourseCard } from "@/components/CourseCard";
 
@@ -43,13 +43,13 @@ export default async function CoursesPage({
       <section className="bg-white py-20">
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {COURSES.map((course, i) => (
+            {orderedCourses(loc).map((course, i) => (
               <CourseCard
                 key={course.id}
                 course={course}
                 index={i}
                 locale={loc}
-                learnMoreLabel={dict.common.learnMore}
+                dict={dict}
               />
             ))}
           </div>
