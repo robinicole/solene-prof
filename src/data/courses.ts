@@ -20,7 +20,7 @@ export interface CourseContent {
   readonly format: string;
 }
 
-export type Audience = "fr" | "en";
+export type Audience = "fr" | "en" | "both";
 
 export interface Course {
   readonly id: string;
@@ -78,7 +78,7 @@ export const COURSES: readonly Course[] = [
   {
     id: "gcse",
     slug: "gcse",
-    audience: "fr",
+    audience: "both",
     fr: {
       title: "GCSE Français",
       subtitle: "Réussir l'épreuve de français au GCSE",
@@ -264,8 +264,13 @@ export function courseContent(course: Course, locale: Locale): CourseContent {
  */
 export function orderedCourses(locale: Locale): readonly Course[] {
   const firstAudience: Audience = locale === "en" ? "en" : "fr";
+  // "both"-audience courses always belong to the first group.
+  const inFirstGroup = (course: Course) =>
+    course.audience === "both" || course.audience === firstAudience;
   return [...COURSES].sort((a, b) => {
-    if (a.audience === b.audience) return 0;
-    return a.audience === firstAudience ? -1 : 1;
+    const aFirst = inFirstGroup(a);
+    const bFirst = inFirstGroup(b);
+    if (aFirst === bFirst) return 0;
+    return aFirst ? -1 : 1;
   });
 }
