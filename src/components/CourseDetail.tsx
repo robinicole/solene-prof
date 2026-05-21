@@ -77,7 +77,7 @@ export function CourseDetail({ course, locale, dict }: CourseDetailProps) {
           </p>
           <Link
             href={`/${locale}/contact?cours=${course.id}`}
-            className="mt-8 inline-block rounded-sm bg-coral px-8 py-3.5 text-base font-bold text-blue transition-colors hover:bg-coral-light"
+            className="mt-8 inline-block rounded-sm bg-coral px-8 py-3.5 text-base font-bold text-white transition-colors hover:bg-coral-light"
           >
             {t.ctaButton} &rarr;
           </Link>

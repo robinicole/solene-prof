@@ -63,7 +63,7 @@ export function PricingTable({ locale, dict }: PricingTableProps) {
             </p>
             <Link
               href={`/${locale}/contact?cours=business`}
-              className="mt-5 inline-block rounded-sm bg-coral px-6 py-3 text-sm font-bold text-blue transition-colors hover:bg-coral-light"
+              className="mt-5 inline-block rounded-sm bg-coral px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-coral-light"
             >
               {t.businessButton} &rarr;
             </Link>
@@ -96,7 +96,7 @@ export function PricingTable({ locale, dict }: PricingTableProps) {
           <p className="text-lg leading-relaxed text-mist">{t.ctaText}</p>
           <Link
             href={`/${locale}/contact`}
-            className="mt-7 inline-block rounded-sm bg-coral px-8 py-3.5 text-base font-bold text-blue transition-colors hover:bg-coral-light"
+            className="mt-7 inline-block rounded-sm bg-coral px-8 py-3.5 text-base font-bold text-white transition-colors hover:bg-coral-light"
           >
             {t.ctaButton} &rarr;
           </Link>

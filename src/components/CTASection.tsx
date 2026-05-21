@@ -13,10 +13,10 @@ export function CTASection({ locale, dict }: CTASectionProps) {
   return (
     <section className="bg-coral py-20">
       <div className="mx-auto max-w-3xl px-6 text-center">
-        <h2 className="text-3xl font-extrabold text-blue md:text-4xl">
+        <h2 className="text-3xl font-extrabold text-white md:text-4xl">
           {c.title} {c.titleAccent}
         </h2>
-        <p className="mx-auto mt-4 max-w-xl leading-relaxed text-blue/80">
+        <p className="mx-auto mt-4 max-w-xl leading-relaxed text-white/90">
           {c.description}
         </p>
         <Link

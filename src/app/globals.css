@@ -2,7 +2,9 @@
 
 /* =========================================================================
    Design system : inspiré de l'Institut Français (identité propre à Solène)
-   Palette : Bleu roi & Corail · Typo : Hanken Grotesk
+   Palette : Bleu roi & Orange (harmonisée à la photo) · Typo : Hanken Grotesk
+   Note : le jeton "coral" porte désormais l'orange des étagères de la photo,
+   et "mist" un crème chaud (les murs de la photo).
    ========================================================================= */
 
 @theme {
@@ -11,12 +13,12 @@
   --color-blue-soft: #47629f;
   --color-blue-pale: #c3cee6;
 
-  --color-coral: #ff9575;
-  --color-coral-light: #ffb6a0;
-  --color-coral-dark: #bf5230;
+  --color-coral: #e5602e;
+  --color-coral-light: #f0793f;
+  --color-coral-dark: #b34a1c;
 
-  --color-mist: #ebeef6;
-  --color-mist-dark: #d7deef;
+  --color-mist: #f3ecdd;
+  --color-mist-dark: #e6dcc4;
 
   --color-ink: #2e2e2e;
   --color-ink-light: #4f4f57;

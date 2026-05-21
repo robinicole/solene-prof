@@ -25,7 +25,7 @@ export default function NotFound() {
         <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
           <Link
             href={`/${locale}`}
-            className="rounded-sm bg-coral px-8 py-4 font-bold text-blue transition-colors hover:bg-coral-light"
+            className="rounded-sm bg-coral px-8 py-4 font-bold text-white transition-colors hover:bg-coral-light"
           >
             {nf.homeButton}
           </Link>

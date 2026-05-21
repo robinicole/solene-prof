@@ -118,7 +118,7 @@ export default async function AboutPage({
           </h2>
           <Link
             href={`/${loc}/contact`}
-            className="mt-8 inline-block rounded-sm bg-coral px-8 py-3.5 text-base font-bold text-blue transition-colors hover:bg-coral-light"
+            className="mt-8 inline-block rounded-sm bg-coral px-8 py-3.5 text-base font-bold text-white transition-colors hover:bg-coral-light"
           >
             {a.ctaButton} &rarr;
           </Link>

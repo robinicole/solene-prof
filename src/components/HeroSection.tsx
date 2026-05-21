@@ -36,7 +36,7 @@ export function HeroSection({ locale, dict }: HeroSectionProps) {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 href={`/${locale}/cours`}
-                className="rounded-sm bg-coral px-7 py-3.5 text-center text-base font-bold text-blue transition-colors hover:bg-coral-light"
+                className="rounded-sm bg-coral px-7 py-3.5 text-center text-base font-bold text-white transition-colors hover:bg-coral-light"
               >
                 {h.ctaPrimary}
               </Link>

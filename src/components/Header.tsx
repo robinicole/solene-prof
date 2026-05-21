@@ -78,7 +78,7 @@ export function Header({ locale, dict }: HeaderProps) {
           <LanguageSwitcher locale={locale} dict={dict} />
           <Link
             href={`/${locale}/contact`}
-            className="rounded-sm bg-coral px-5 py-2.5 text-sm font-bold text-blue transition-colors hover:bg-coral-light"
+            className="rounded-sm bg-coral px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-coral-light"
           >
             {dict.nav.cta}
           </Link>
@@ -127,7 +127,7 @@ export function Header({ locale, dict }: HeaderProps) {
               <Link
                 href={`/${locale}/contact`}
                 onClick={() => setIsMenuOpen(false)}
-                className="rounded-sm bg-coral px-5 py-2.5 text-sm font-bold text-blue"
+                className="rounded-sm bg-coral px-5 py-2.5 text-sm font-bold text-white"
               >
                 {dict.nav.cta}
               </Link>
