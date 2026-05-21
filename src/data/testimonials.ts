@@ -16,12 +16,12 @@ export const TESTIMONIALS: readonly Testimonial[] = [
     fr: {
       quote:
         "Solène a accompagné ma fille sur plusieurs années, et notamment au moment charnière du passage de l'école primaire britannique au collège, au sein du Lycée Français de Londres. Attentionnée et patiente, Solène a su transmettre à ma fille son amour de la littérature.",
-      author: "Maman d'une élève",
+      author: "Maman d'Anouk qui rentre en sixième",
     },
     en: {
       quote:
         "Solène supported my daughter over several years, and especially at the pivotal moment of moving from British primary school to secondary school at the Lycée Français de Londres. Attentive and patient, Solène was able to pass on to my daughter her love of literature.",
-      author: "Mother of a pupil",
+      author: "Anouk's mum, who is starting Year 7",
     },
   },
   {
