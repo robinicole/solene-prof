@@ -28,7 +28,8 @@ Londres) comme francophone.
 ## 4. Périmètre fonctionnel
 
 ### 4.1 Arborescence
-`Accueil · Cours · Tarifs · À propos · Contact` — plus le sélecteur FR/EN.
+`Accueil · Cours · Tarifs · À propos · Témoignages · Contact` — plus le
+sélecteur FR/EN.
 
 ### 4.2 Les 5 cours
 Chaque cours = une carte sur `/cours` + une page de détail dédiée :
@@ -42,9 +43,9 @@ Page détail : description, « Au programme », « Pour qui ? », « Format &
 déroulement », CTA vers le contact (cours pré-sélectionné).
 
 ### 4.3 Tarifs (2026-2027)
-Cours en personne 40 £/h · en ligne 35 £/h · 45 min 30 £ · 30 min 25 £ ·
-Business à partir de 60 £/h (sur devis). Politique d'annulation et de
-rattrapage affichée.
+Cours en personne 50 £/h · en ligne 45 £/h · 45 min 40 £ · 30 min 35 £ ·
+Business à partir de 80 £/h (sur devis). Politique d'annulation et de
+rattrapage affichée. Source de vérité : `src/data/pricing.ts`.
 
 ### 4.4 Formulaire de contact
 Champs : Email (seul requis) + Nom + Cours souhaité + Niveau/classe + Format
@@ -54,6 +55,19 @@ Resend. Le cours peut être pré-rempli via `?cours=<id>`.
 ### 4.5 Bilingue FR/EN
 Site entièrement bilingue dès le départ. Routing par locale (`/fr`, `/en`),
 middleware de redirection, sélecteur de langue. FR par défaut.
+
+### 4.6 Témoignages
+12 témoignages bilingues (`src/data/testimonials.ts`), chacun avec citation +
+auteur en FR et en EN, attribués par descripteur neutre (cf. §7).
+
+- **Accueil** : carrousel (`TestimonialsSection`) placé entre Cours et
+  À propos. Défilement automatique (7 s, en pause au survol/focus), transition
+  fondu-glissé (framer-motion), carte à **hauteur fixe** (26-28 rem) ; les avis
+  longs (> 320 car.) sont repliés derrière « Lire la suite » et défilent à
+  l'intérieur de la carte. Bouton « Voir tous les témoignages » sous le
+  carrousel.
+- **Page dédiée** `/temoignages` : les 12 avis en grille (texte intégral),
+  référencée dans la nav principale, le pied de page et le sitemap.
 
 ## 5. Design
 
@@ -86,14 +100,18 @@ police libre de droits.
 
 ```
 src/
-├── app/[locale]/      Pages (accueil, cours, cours/[slug], tarifs, a-propos, contact)
+├── app/[locale]/      Pages (accueil, cours, cours/[slug], tarifs, a-propos, temoignages, contact)
 ├── app/api/contact/   Route POST (Zod → honeypot → Turnstile → Resend)
-├── components/        Composants UI
+├── app/sitemap.ts     Sitemap (pages statiques × locales + cours)
+├── components/        Composants UI (dont TestimonialsSection : carrousel client)
 ├── data/              courses.ts · pricing.ts · testimonials.ts
 ├── i18n/              config · fr · en · index
 ├── lib/               validation (Zod) · structured-data (JSON-LD)
 └── middleware.ts      Redirection de locale
 ```
+
+> Le carrousel de témoignages utilise **framer-motion** (seule dépendance
+> d'animation ; le reste du site reste sans animation au défilement, cf. §5).
 
 ## 7. Contenu
 
@@ -101,8 +119,10 @@ Tous les textes (descriptions de cours, page À propos, accroches, version
 anglaise) ont été **rédigés en placeholder par l'IA**, balisés `[À RELIRE]`
 dans les fichiers source. Solène doit relire et corriger.
 
-Témoignages : 2 fournis, attribués avec un descripteur neutre
-(« Parent d'élève ») — à remplacer par prénom + initiale réels après accord.
+Témoignages : 12 fournis par Solène (verbatim, légèrement édités et traduits
+dans les deux langues), attribués avec un descripteur neutre
+(« Maman de… », « Adulte… », « Famille française… ») — à remplacer par prénom +
+initiale réels après accord de chaque parent.
 
 ## 8. À fournir par Solène
 
@@ -131,3 +151,12 @@ dédié · même compte Resend · témoignages en descripteur neutre.
 Cadrage 2 (design) : langage visuel inspiré de l'Institut Français · police
 Hanken Grotesk · palette bleu roi + corail · décor essentiel (filets +
 bandeaux) · wordmark encadré · héros typographique bleu.
+
+Session témoignages & navigation (2026-06-27, `/grill-with-docs`) : ajout de
+10 témoignages (12 au total, bilingues, descripteur neutre) · section accueil
+transformée en carrousel (défilement auto + transition + hauteur fixe + repli
+des avis longs) · audit de l'arborescence : seule lacune = découvrabilité des
+témoignages · création d'une page dédiée `/temoignages` (grille) reliée à la
+nav, au pied de page, au sitemap et à un bouton sous le carrousel · structure
+restante jugée saine, laissée inchangée · tarifs mis à jour (50/45/40/35 £,
+Business dès 80 £) pour refléter `src/data/pricing.ts`.
