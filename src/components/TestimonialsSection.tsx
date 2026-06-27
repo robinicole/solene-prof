@@ -88,7 +88,7 @@ export function TestimonialsSection({
                 exit={{ opacity: 0, x: -24 }}
                 transition={{ duration: 0.4, ease: "easeInOut" }}
                 aria-live="polite"
-                className="flex flex-col p-8 md:p-12"
+                className="flex h-[28rem] flex-col p-8 md:h-[26rem] md:p-12"
               >
                 <span
                   aria-hidden="true"
@@ -96,13 +96,17 @@ export function TestimonialsSection({
                 >
                   &ldquo;
                 </span>
-                <p
-                  className={`mt-4 text-lg leading-relaxed text-ink ${
-                    isLong && !expanded ? "line-clamp-6" : ""
-                  }`}
-                >
-                  {active.quote}
-                </p>
+                <div className="mt-4 min-h-0 flex-1">
+                  <p
+                    className={`text-lg leading-relaxed text-ink ${
+                      isLong && !expanded
+                        ? "line-clamp-6"
+                        : "max-h-full overflow-y-auto"
+                    }`}
+                  >
+                    {active.quote}
+                  </p>
+                </div>
                 {isLong && (
                   <button
                     type="button"
