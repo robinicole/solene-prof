@@ -17,8 +17,8 @@ export default async function HomePage({ params }: { params: Params }) {
     <>
       <HeroSection locale={loc} dict={dict} />
       <CoursesPreview locale={loc} dict={dict} />
-      <AboutPreview locale={loc} dict={dict} />
       <TestimonialsSection locale={loc} dict={dict} />
+      <AboutPreview locale={loc} dict={dict} />
       <CTASection locale={loc} dict={dict} />
     </>
   );
