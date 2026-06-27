@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { SectionHeader } from "./SectionHeader";
 import { TESTIMONIALS } from "@/data/testimonials";
 import type { Dictionary } from "@/i18n";
@@ -12,6 +13,8 @@ interface TestimonialsSectionProps {
 }
 
 const AUTOPLAY_MS = 7000;
+/* Quotes longer than this are clamped behind a "read more" toggle. */
+const LONG_QUOTE_CHARS = 320;
 
 export function TestimonialsSection({
   locale,
@@ -20,28 +23,46 @@ export function TestimonialsSection({
   const count = TESTIMONIALS.length;
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [expanded, setExpanded] = useState(false);
 
   const labels =
     locale === "fr"
-      ? { prev: "Témoignage précédent", next: "Témoignage suivant", go: "Aller au témoignage" }
-      : { prev: "Previous testimonial", next: "Next testimonial", go: "Go to testimonial" };
+      ? {
+          prev: "Témoignage précédent",
+          next: "Témoignage suivant",
+          go: "Aller au témoignage",
+          more: "Lire la suite",
+          less: "Réduire",
+        }
+      : {
+          prev: "Previous testimonial",
+          next: "Next testimonial",
+          go: "Go to testimonial",
+          more: "Read more",
+          less: "Show less",
+        };
 
   const goTo = useCallback(
-    (next: number) => setIndex(((next % count) + count) % count),
+    (next: number) => {
+      setExpanded(false);
+      setIndex(((next % count) + count) % count);
+    },
     [count],
   );
   const prev = useCallback(() => goTo(index - 1), [goTo, index]);
   const next = useCallback(() => goTo(index + 1), [goTo, index]);
 
+  /* Auto-advance pauses on hover/focus and while a long quote is expanded. */
   useEffect(() => {
-    if (paused || count <= 1) return;
+    if (paused || expanded || count <= 1) return;
     const timer = setInterval(() => {
       setIndex((current) => (current + 1) % count);
     }, AUTOPLAY_MS);
     return () => clearInterval(timer);
-  }, [paused, count]);
+  }, [paused, expanded, count]);
 
   const active = TESTIMONIALS[index][locale];
+  const isLong = active.quote.length > LONG_QUOTE_CHARS;
 
   return (
     <section className="bg-white py-24">
@@ -58,23 +79,45 @@ export function TestimonialsSection({
           onFocusCapture={() => setPaused(true)}
           onBlurCapture={() => setPaused(false)}
         >
-          <blockquote
-            aria-live="polite"
-            className="flex min-h-[20rem] flex-col rounded-sm border border-mist-dark bg-white p-8 md:min-h-[16rem] md:p-12"
-          >
-            <span
-              aria-hidden="true"
-              className="text-6xl leading-[0.6] font-extrabold text-coral"
-            >
-              &ldquo;
-            </span>
-            <p className="mt-4 flex-1 text-lg leading-relaxed text-ink">
-              {active.quote}
-            </p>
-            <footer className="mt-6 border-t border-mist-dark pt-4">
-              <p className="text-sm font-bold text-blue">{active.author}</p>
-            </footer>
-          </blockquote>
+          <div className="overflow-hidden rounded-sm border border-mist-dark bg-white">
+            <AnimatePresence mode="wait">
+              <motion.blockquote
+                key={TESTIMONIALS[index].id}
+                initial={{ opacity: 0, x: 24 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -24 }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+                aria-live="polite"
+                className="flex flex-col p-8 md:p-12"
+              >
+                <span
+                  aria-hidden="true"
+                  className="text-6xl leading-[0.6] font-extrabold text-coral"
+                >
+                  &ldquo;
+                </span>
+                <p
+                  className={`mt-4 text-lg leading-relaxed text-ink ${
+                    isLong && !expanded ? "line-clamp-6" : ""
+                  }`}
+                >
+                  {active.quote}
+                </p>
+                {isLong && (
+                  <button
+                    type="button"
+                    onClick={() => setExpanded((v) => !v)}
+                    className="mt-3 self-start text-sm font-bold text-coral underline-offset-2 hover:underline"
+                  >
+                    {expanded ? labels.less : labels.more}
+                  </button>
+                )}
+                <footer className="mt-6 border-t border-mist-dark pt-4">
+                  <p className="text-sm font-bold text-blue">{active.author}</p>
+                </footer>
+              </motion.blockquote>
+            </AnimatePresence>
+          </div>
 
           {count > 1 && (
             <>
