@@ -15,6 +15,7 @@ export const en: Dictionary = {
     courses: "Courses",
     pricing: "Pricing",
     about: "About",
+    testimonials: "Testimonials",
     contact: "Contact",
     cta: "Book a lesson",
   },
@@ -86,6 +87,7 @@ export const en: Dictionary = {
     testimonials: {
       eyebrow: "Testimonials",
       title: "What families say",
+      cta: "See all testimonials",
     },
     cta: {
       title: "Ready to start",
@@ -181,6 +183,17 @@ export const en: Dictionary = {
       "Entry to the Lycée Français de Londres, GCSE, Brevet, the French Baccalauréat oral and written, French as a foreign language, professional French: I have supported these paths for over ten years. That breadth helps me adapt my method to each student, whatever their age, school system or goal.",
     ctaTitle: "Like to talk it through?",
     ctaButton: "Get in touch",
+  },
+
+  testimonialsPage: {
+    meta: {
+      title: "Testimonials",
+      description:
+        "What families and students say about Solène Lanza, a French teacher in London: Lycée Français, GCSE, adult learners and the British system.",
+    },
+    eyebrow: "Testimonials",
+    title: "What families say",
+    lead: "Children at the Lycée Français, students preparing for GCSE, adults learning French — here is their feedback, in their own words.",
   },
 
   contactPage: {

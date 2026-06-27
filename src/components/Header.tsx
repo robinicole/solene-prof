@@ -45,6 +45,7 @@ export function Header({ locale, dict }: HeaderProps) {
     { href: `/${locale}/cours`, label: dict.nav.courses },
     { href: `/${locale}/tarifs`, label: dict.nav.pricing },
     { href: `/${locale}/a-propos`, label: dict.nav.about },
+    { href: `/${locale}/temoignages`, label: dict.nav.testimonials },
     { href: `/${locale}/contact`, label: dict.nav.contact },
   ];
 

@@ -6,7 +6,14 @@ const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticPaths = ["", "/cours", "/tarifs", "/a-propos", "/contact"];
+  const staticPaths = [
+    "",
+    "/cours",
+    "/tarifs",
+    "/a-propos",
+    "/temoignages",
+    "/contact",
+  ];
   const entries: MetadataRoute.Sitemap = [];
 
   for (const locale of locales) {

@@ -13,6 +13,7 @@ export const fr = {
     courses: "Cours",
     pricing: "Tarifs",
     about: "À propos",
+    testimonials: "Témoignages",
     contact: "Contact",
     cta: "Réserver un cours",
   },
@@ -84,6 +85,7 @@ export const fr = {
     testimonials: {
       eyebrow: "Témoignages",
       title: "Ce qu'en disent les familles",
+      cta: "Voir tous les témoignages",
     },
     cta: {
       title: "Envie de commencer",
@@ -180,6 +182,17 @@ export const fr = {
       "Entrée au Lycée Français de Londres, GCSE, Brevet, Baccalauréat de français à l'oral comme à l'écrit, français langue étrangère, français professionnel : j'accompagne ces parcours depuis plus de dix ans. Cette variété m'aide à adapter ma méthode à chaque élève, quel que soit son âge, son système scolaire ou son objectif.",
     ctaTitle: "Envie d'en discuter ?",
     ctaButton: "Me contacter",
+  },
+
+  testimonialsPage: {
+    meta: {
+      title: "Témoignages",
+      description:
+        "Ce que les familles et les élèves disent de Solène Lanza, professeure de français à Londres : Lycée Français, GCSE, adultes et système britannique.",
+    },
+    eyebrow: "Témoignages",
+    title: "Ce qu'en disent les familles",
+    lead: "Enfants au Lycée Français, élèves préparant le GCSE, adultes apprenant le français : voici leurs retours, dans leurs mots.",
   },
 
   contactPage: {

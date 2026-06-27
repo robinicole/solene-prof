@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { SectionHeader } from "./SectionHeader";
 import { TESTIMONIALS } from "@/data/testimonials";
@@ -161,6 +162,16 @@ export function TestimonialsSection({
             ))}
           </div>
         )}
+
+        <div className="mt-10 text-center">
+          <Link
+            href={`/${locale}/temoignages`}
+            className="inline-flex items-center gap-1.5 text-sm font-bold text-blue underline-offset-4 transition-colors hover:text-coral hover:underline"
+          >
+            {dict.home.testimonials.cta}
+            <span aria-hidden="true">&rarr;</span>
+          </Link>
+        </div>
       </div>
     </section>
   );
